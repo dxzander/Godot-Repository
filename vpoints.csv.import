@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://3nexj3je6s52"
+
+[deps]
+
+files=["res://vpoints.0.translation", "res://vpoints.1.translation"]
+
+source_file="res://vpoints.csv"
+dest_files=["res://vpoints.0.translation", "res://vpoints.1.translation"]
+
+[params]
+
+compress=true
+delimiter=0

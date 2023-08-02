@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cetfihndgcjgu"]
+
+[ext_resource type="Script" path="res://LineAnim.gd" id="1_whs4w"]
+
+[sub_resource type="Animation" id="Animation_dfats"]
+resource_name = "Displacement"
+length = 32.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 32),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, -175), Vector2(2.08165e-12, 1920)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jv6fx"]
+_data = {
+"Displacement": SubResource("Animation_dfats")
+}
+
+[node name="LineAnim" type="Node2D"]
+script = ExtResource("1_whs4w")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(2.08165e-12, -175)
+rotation = 0.0872665
+points = PackedVector2Array(0, 0, 2000, 2.08165e-12)
+default_color = Color(1, 1, 1, 0.501961)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Line2D")
+libraries = {
+"": SubResource("AnimationLibrary_jv6fx")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

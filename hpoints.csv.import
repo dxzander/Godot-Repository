@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://cxiamejbfw18j"
+
+[deps]
+
+files=["res://hpoints.0.translation", "res://hpoints.1.translation"]
+
+source_file="res://hpoints.csv"
+dest_files=["res://hpoints.0.translation", "res://hpoints.1.translation"]
+
+[params]
+
+compress=true
+delimiter=0

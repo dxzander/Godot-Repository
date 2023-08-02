@@ -1,0 +1,156 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxx3pqqc7pbt1"]
+
+[ext_resource type="Texture2D" uid="uid://ce01d54vblldk" path="res://Paper texture.jpeg" id="1_54dpv"]
+[ext_resource type="Script" path="res://blueprints.gd" id="1_jnyrm"]
+[ext_resource type="Shader" path="res://alpha_multiply.gdshader" id="3_3r5yf"]
+[ext_resource type="PackedScene" uid="uid://cetfihndgcjgu" path="res://LineAnim.tscn" id="3_r4q58"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6vxk"]
+shader = ExtResource("3_3r5yf")
+shader_parameter/alpha = 0.5
+
+[node name="Root" type="Node2D"]
+script = ExtResource("1_jnyrm")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.133333, 0.133333, 0.133333, 1)
+polygon = PackedVector2Array(0, 0, 1920, 2.08165e-12, 1920, 1080, 2.08165e-12, 1080)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(960, 540)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="V Lines" type="Node2D" parent="."]
+
+[node name="LineAnim V1" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="LineAnim V2" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+line_number = 1
+
+[node name="LineAnim V3" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+line_number = 2
+
+[node name="LineAnim V4" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+line_number = 3
+
+[node name="LineAnim V5" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+line_number = 4
+
+[node name="LineAnim V6" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+line_number = 5
+
+[node name="LineAnim V7" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+line_number = 6
+
+[node name="LineAnim V8" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+line_number = 7
+
+[node name="LineAnim V9" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+line_number = 8
+
+[node name="LineAnim V10" parent="V Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+line_number = 9
+
+[node name="H Lines" type="Node2D" parent="."]
+
+[node name="LineAnim H1" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+
+[node name="LineAnim H2" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 1
+
+[node name="LineAnim H3" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 2
+
+[node name="LineAnim H4" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 3
+
+[node name="LineAnim H5" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 4
+
+[node name="LineAnim H6" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 5
+
+[node name="LineAnim H7" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 6
+
+[node name="LineAnim H8" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 7
+
+[node name="LineAnim H9" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 8
+
+[node name="LineAnim H10" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 9
+
+[node name="LineAnim H11" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 10
+
+[node name="LineAnim H12" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 11
+
+[node name="LineAnim H13" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 12
+
+[node name="LineAnim H14" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 13
+
+[node name="LineAnim H15" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 14
+
+[node name="LineAnim H16" parent="H Lines" instance=ExtResource("3_r4q58")]
+position = Vector2(2.08165e-12, 1920)
+rotation = -1.5708
+line_number = 15
+
+[node name="PaperTexture" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_c6vxk")
+position = Vector2(932, 498)
+scale = Vector2(2.11248, 2.11248)
+texture = ExtResource("1_54dpv")
+
+[node name="Line2D" type="Line2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
