@@ -34,7 +34,7 @@ script = ExtResource("1_5gr2c")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -200.0
-offset_right = -70.0
+offset_right = -69.9999
 offset_bottom = 117.0
 text = "XYL"
 label_settings = SubResource("LabelSettings_3ejrl")
