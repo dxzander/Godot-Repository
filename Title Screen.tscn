@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkndt4d4fxc8s"]
+[gd_scene load_steps=9 format=3 uid="uid://dkndt4d4fxc8s"]
 
 [ext_resource type="PackedScene" uid="uid://dxx3pqqc7pbt1" path="res://blueprints.tscn" id="1_0jgt4"]
 [ext_resource type="Shader" path="res://alpha_multiply.gdshader" id="1_jlh1q"]
 [ext_resource type="Texture2D" uid="uid://ce01d54vblldk" path="res://Paper texture.jpeg" id="2_77j7k"]
+[ext_resource type="Shader" path="res://Mask.gdshader" id="2_jh5g5"]
+[ext_resource type="Texture2D" uid="uid://wp8kq8x1uh54" path="res://Title card Banner no line.png" id="3_v3hiy"]
+[ext_resource type="Texture2D" uid="uid://bcgc8b3k16tha" path="res://Title card Line.png" id="4_3pw46"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ivti1"]
 shader = ExtResource("1_jlh1q")
 shader_parameter/alpha = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wp0cj"]
+shader = ExtResource("2_jh5g5")
 
 [node name="Title Screen" type="Node2D"]
 
@@ -15,23 +21,33 @@ color = Color(0.133333, 0.133333, 0.133333, 1)
 polygon = PackedVector2Array(0, 0, 1920, 2.08165e-12, 1920, 1080, 2.08165e-12, 1080)
 
 [node name="Control" type="Control" parent="."]
+visible = false
 clip_contents = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 480.0
 offset_bottom = 1080.0
 
-[node name="Blueprints" parent="Control" instance=ExtResource("1_0jgt4")]
-position = Vector2(2.08165e-12, 2.08165e-12)
-
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(480, 2.08165e-12, 480, 1080)
-
 [node name="PaperTexture" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ivti1")
 position = Vector2(932, 498)
 scale = Vector2(2.11248, 2.11248)
 texture = ExtResource("2_77j7k")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+rect = Rect2(2.08165e-12, 2.08165e-12, 1920, 1080)
+
+[node name="Blueprints" parent="BackBufferCopy" instance=ExtResource("1_0jgt4")]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="TitleCardBannerNoLine" type="Sprite2D" parent="BackBufferCopy/Blueprints"]
+material = SubResource("ShaderMaterial_wp0cj")
+position = Vector2(960, 540)
+texture = ExtResource("3_v3hiy")
+
+[node name="TitleCardLine" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("4_3pw46")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(960, 540)
