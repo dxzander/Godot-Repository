@@ -16,12 +16,6 @@ script = ExtResource("1_jnyrm")
 color = Color(0.301961, 0.533333, 0.772549, 1)
 polygon = PackedVector2Array(0, 0, 1920, 2.08165e-12, 1920, 1080, 2.08165e-12, 1080)
 
-[node name="PaperTexture" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_c6vxk")
-position = Vector2(932, 498)
-scale = Vector2(2.11248, 2.11248)
-texture = ExtResource("1_54dpv")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
@@ -150,6 +144,13 @@ line_number = 15
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
+
+[node name="PaperTexture" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_c6vxk")
+position = Vector2(932, 498)
+scale = Vector2(2.11248, 2.11248)
+texture = ExtResource("1_54dpv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(960, 540)
