@@ -152,7 +152,4 @@ position = Vector2(932, 498)
 scale = Vector2(2.11248, 2.11248)
 texture = ExtResource("1_54dpv")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(960, 540)
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

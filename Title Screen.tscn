@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkndt4d4fxc8s"]
+[gd_scene load_steps=11 format=3 uid="uid://dkndt4d4fxc8s"]
 
 [ext_resource type="PackedScene" uid="uid://dxx3pqqc7pbt1" path="res://blueprints.tscn" id="1_0jgt4"]
+[ext_resource type="Script" path="res://Title Screen.gd" id="1_cssgq"]
 [ext_resource type="Shader" path="res://alpha_multiply.gdshader" id="1_jlh1q"]
 [ext_resource type="Texture2D" uid="uid://ce01d54vblldk" path="res://Paper texture.jpeg" id="2_77j7k"]
 [ext_resource type="Texture2D" uid="uid://wp8kq8x1uh54" path="res://Title card Banner no line.png" id="3_v3hiy"]
@@ -10,30 +11,77 @@
 shader = ExtResource("1_jlh1q")
 shader_parameter/alpha = 0.5
 
+[sub_resource type="Animation" id="Animation_gx5kv"]
+resource_name = "Cutout slide in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitleCardLine:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(540, 540), Vector2(540, 540), Vector2(960, 540)]
+}
+
+[sub_resource type="Animation" id="Animation_5l80t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitleCardLine:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 540)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvw4d"]
+_data = {
+"Cutout slide in": SubResource("Animation_gx5kv"),
+"RESET": SubResource("Animation_5l80t")
+}
+
 [node name="Title Screen" type="Node2D"]
+script = ExtResource("1_cssgq")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.133333, 0.133333, 0.133333, 1)
 polygon = PackedVector2Array(0, 0, 1920, 2.08165e-12, 1920, 1080, 2.08165e-12, 1080)
 
-[node name="Mask" type="TextureRect" parent="."]
-clip_children = 1
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("3_v3hiy")
-
-[node name="Blueprints" parent="Mask" instance=ExtResource("1_0jgt4")]
-position = Vector2(2.08165e-12, 2.08165e-12)
-
 [node name="TitleCardLine" type="Sprite2D" parent="."]
+texture_repeat = 2
 position = Vector2(960, 540)
 texture = ExtResource("4_3pw46")
+
+[node name="Mask" type="TextureRect" parent="TitleCardLine"]
+clip_children = 2
+texture_repeat = 2
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("3_v3hiy")
+
+[node name="Blueprints" parent="TitleCardLine/Mask" instance=ExtResource("1_0jgt4")]
+position = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="PaperTexture" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ivti1")
 position = Vector2(932, 498)
 scale = Vector2(2.11248, 2.11248)
 texture = ExtResource("2_77j7k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hvw4d")
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(960, 540)
