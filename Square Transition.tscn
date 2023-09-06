@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://c28nwj2o8k4f2"]
+
+[ext_resource type="Script" path="res://Square Transition.gd" id="1_gfinq"]
+
+[node name="Square Transition" type="Node2D"]
+script = ExtResource("1_gfinq")
+
+[node name="Background" type="Polygon2D" parent="."]
+color = Color(1, 1, 0, 1)
+polygon = PackedVector2Array(0, 0, 1920, 2.08165e-12, 1920, 1080, 2.08165e-12, 1080)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
