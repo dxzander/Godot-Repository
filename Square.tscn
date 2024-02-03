@@ -39,8 +39,7 @@ _data = {
 script = ExtResource("1_mvl6a")
 
 [node name="Fill" type="Polygon2D" parent="."]
-scale = Vector2(1e-05, 1e-05)
-color = Color(0.133333, 0.133333, 0.133333, 1)
+color = Color(0.890196, 0.87451, 0.839216, 1)
 offset = Vector2(-60, -60)
 polygon = PackedVector2Array(60, 2.08165e-12, 120, 60, 60, 120, 2.08165e-12, 60)
 
@@ -48,7 +47,7 @@ polygon = PackedVector2Array(60, 2.08165e-12, 120, 60, 60, 120, 2.08165e-12, 60)
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(1e-05, 1e-05)
 points = PackedVector2Array(2.08165e-12, -60, 60, 2.08165e-12, 2.08165e-12, 60, -60, 2.08165e-12, 2.08165e-12, -60)
-default_color = Color(0.133333, 0.133333, 0.133333, 1)
+default_color = Color(0.890196, 0.87451, 0.839216, 1)
 begin_cap_mode = 1
 end_cap_mode = 1
 
